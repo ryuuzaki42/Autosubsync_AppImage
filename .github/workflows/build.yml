@@ -100,6 +100,5 @@ jobs:
           file: "Autosubsync*.AppImage; Autosubsync*.md5"
           #overwrite: true
           verbose: true
-          #tags: true
           draft: false
           default_release_name: "Autosubsync v in AppImage"
