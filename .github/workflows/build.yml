@@ -100,7 +100,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          file: "Autosubsync*.AppImage; Autosubsync*.md5"
+          file: "Autosubsync*.AppImage; Autosubsync*.zsync; Autosubsync*.md5"
           #overwrite: true
           verbose: true
           draft: false
