@@ -49,6 +49,7 @@ jobs:
       run: |
         set -x
         version="1.0.1"
+        tag=2 #1
 
         cd squashfs-root/
         pwd; ls -lah
@@ -90,8 +91,8 @@ jobs:
         fileName=$(ls Autosubsync*.AppImage)
         echo "fileName: $fileName"
         fileNameNew=$(echo "$fileName" | sed 's/.AppImage//')
-        mv "$fileName" "${fileNameNew}-1_JB.AppImage"
-        md5sum "${fileNameNew}-1_JB.AppImage" > "${fileNameNew}-1_JB.AppImage.md5"
+        mv "$fileName" "${fileNameNew}-${tag}_JB.AppImage"
+        md5sum "${fileNameNew}-${tag}_JB.AppImage" > "${fileNameNew}-${tag}_JB.AppImage.md5"
         pwd; ls -lah
 
     # https://github.com/marketplace/actions/upload-to-github-release
