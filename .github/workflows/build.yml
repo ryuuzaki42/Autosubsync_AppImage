@@ -77,9 +77,6 @@ jobs:
         chmod +x Autosubsync.desktop
         cat Autosubsync.desktop
 
-        sed -i "s/Name=Autosubsync.*/Name=Autosubsync-$version/" Autosubsync.desktop
-        cat Autosubsync.desktop
-
         pwd; ls -lah
         cd ../
         mv AppRun squashfs-root/
