@@ -61,7 +61,6 @@ jobs:
         rm -v .DirIcon AppRun
 
         #find . | grep ".png"
-        #find . | grep ".svg"
         mv python.png Autosubsync.png
 
         #find . | grep ".desktop"
@@ -88,17 +87,15 @@ jobs:
         mv README.md squashfs-root/
         ls -lah squashfs-root/
 
-        ARCH=x86_64 ./appimagetool-x86_64.AppImage squashfs-root/
+        #ARCH=x86_64 ./appimagetool-x86_64.AppImage squashfs-root/
+        ARCH=x86_64 VERSION="${version}-${tag}_JB" ./appimagetool-x86_64.AppImage squashfs-root/
         pwd; ls -lah
 
         fileName=$(ls Autosubsync*.AppImage)
         echo "fileName: $fileName"
-        fileNameNew=$(echo "$fileName" | sed 's/.AppImage//')
-        mv "$fileName" "${fileNameNew}-${tag}_JB.AppImage"
-        md5sum "${fileNameNew}-${tag}_JB.AppImage" > "${fileNameNew}-${tag}_JB.AppImage.md5"
+        md5sum "$fileName" > "${fileName}.md5"
         pwd; ls -lah
 
-    # https://github.com/marketplace/actions/upload-to-github-release
     - uses: xresloader/upload-to-github-release@v1
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -107,4 +104,4 @@ jobs:
           #overwrite: true
           verbose: true
           draft: false
-          default_release_name: "Autosubsync v in AppImage"
+          default_release_name: "Autosubsync V in AppImage"
