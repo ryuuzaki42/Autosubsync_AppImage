@@ -1,5 +1,4 @@
 name: Create new release
-# Test: 1.0.2 
 
 on:
   push:
