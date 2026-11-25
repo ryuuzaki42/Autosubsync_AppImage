@@ -52,8 +52,9 @@ jobs:
     - name: Make AppImage
       run: |
         set -x
-        version="1.0.1"
-        tag=2 #1
+        tag=1 #1
+        version=$(grep -o "Autosubsync:.*" README.md | cut -d ' ' -f2)
+        echo "Autosubsync version: $version - Tag: $tag"
 
         cd squashfs-root/
         pwd; ls -lah
