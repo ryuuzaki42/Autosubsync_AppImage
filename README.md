@@ -6,6 +6,7 @@ Automatically synchronize subtitles with audio using machine learning
 https://github.com/oseiskar/autosubsync
 
 ## Repository: https://github.com/ryuuzaki42/Autosubsync_AppImage
+    Autosubsync: 1.0.2
 
 ## Usage
 
